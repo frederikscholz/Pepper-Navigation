@@ -27,7 +27,7 @@
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find cartographer_ros)/configuration_files
-          -configuration_basename pepper_test.lua"
+          -configuration_basename pepper_2d.lua"
       output="screen">
 		<remap from="imu" to="naoqi_driver_node/imu/base" />
 		<remap from="odom" to="naoqi_driver_node/odom" />

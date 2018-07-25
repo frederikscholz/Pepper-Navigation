@@ -14,7 +14,7 @@
 -- limitations under the License.
 --> 
 <launch>
-	<!--param name="/use_sim_time" value="true" /-->
+	<param name="/use_sim_time" value="true" />
   
 	<param name="robot_description"
     textfile="$(find cartographer_ros)/urdf/pepper.urdf" />

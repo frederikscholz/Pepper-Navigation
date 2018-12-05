@@ -14,7 +14,7 @@
  limitations under the License.
 --> 
 <launch>
-	<!---param name="/use_sim_time" value="true" /-->
+	<!--param name="/use_sim_time" value="true" /-->
   
 	<param name="robot_description"
     textfile="$(find cartographer_ros)/urdf/pepper.urdf" />
@@ -23,13 +23,13 @@
     type="robot_state_publisher" /-->
 
 	<!--include file="$(find laserscan_kinect)/launch/laserscan.launch"/-->
-	<include file="$(find nao_teleop)/launch/teleop_joy.launch" />
+	<!--include file="$(find nao_teleop)/launch/teleop_joy.launch" /-->
 	
-	<node name="squash_depth_camera" pkg="depthimage_to_laserscan"
+	<!--node name="squash_depth_camera" pkg="depthimage_to_laserscan"
       type="depthimage_to_laserscan">
     <remap from="image" to="/naoqi_driver_node/camera/depth/image_raw" />
     <remap from="camera_info" to="/naoqi_driver_node/camera/depth/camera_info"/>
-</node>
+</node-->
 
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
@@ -38,13 +38,15 @@
       output="screen">
 		<remap from="imu" to="naoqi_driver_node/imu/torso" />
 		<remap from="odom" to="naoqi_driver_node/odom" />
+
 		<!--remap from="scan" to="/naoqi_driver_node/laser" /-->
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
-      type="cartographer_occupancy_grid_node" args="-resolution 0.6" />
+      type="cartographer_occupancy_grid_node" args="-resolution 0.075">
+  </node>
 
-  <node name="rviz" pkg="rviz" type="rviz" 
-      args="-d $(find cartographer_ros)/configuration_files/demo_2d_new.rviz" required="true"/>
+  <!--node name="rviz" pkg="rviz" type="rviz" 
+      args="-d $(find cartographer_ros)/configuration_files/demo_2d_new.rviz" required="true"/-->
 	<!-- ~/catkin_ws/src/peppercfg.rviz" -->
 </launch>

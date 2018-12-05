@@ -23,7 +23,7 @@
         args="-d $(find cartographer_ros)/configuration_files/demo_2d_new.rviz" />
 
     <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
-        type="cartographer_occupancy_grid_node" args="-resolution 0.06" />
+        type="cartographer_occupancy_grid_node" args="-resolution 0.075" />
   </group>
 
   <node name="cartographer_offline_node" pkg="cartographer_ros"

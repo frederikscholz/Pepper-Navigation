@@ -65,6 +65,11 @@ TRAJECTORY_BUILDER_2D.submaps.grid_options_2d.resolution = 0.075
 TRAJECTORY_BUILDER_2D.submaps.num_range_data = 65
 POSE_GRAPH.optimize_every_n_nodes = 30
 --POSE_GRAPH.optimize_every_n_nodes = 0
-POSE_GRAPH.constraint_builder.min_score = 0.75
+POSE_GRAPH.constraint_builder.min_score = 0.6
 POSE_GRAPH.constraint_builder.sampling_ratio = 0.3
+--POSE_GRAPH.global_sampling_ratio = 0.3
+POSE_GRAPH.optimization_problem.local_slam_pose_translation_weight=2e3
+POSE_GRAPH.optimization_problem.local_slam_pose_rotation_weight=2e2
+--POSE_GRAPH.optimization_problem.odometry_translation_weight=1e1
+POSE_GRAPH.optimization_problem.odometry_rotation_weight=1
 return options
